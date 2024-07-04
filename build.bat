@@ -1,0 +1,1 @@
+g++ -Wall -std=c++14 -I.\include .\cpp\Game.cpp .\cpp\User.cpp .\cpp\User_Game_Manager.cpp main.cpp -o .\build\ms_windows\dbh_example.exe -L.\lib -lsqlite3
