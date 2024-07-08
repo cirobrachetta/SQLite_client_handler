@@ -1,0 +1,3 @@
+#!/bin/bash
+#g++ -o user_game_system user_game_system.cpp -lsqlite3
+g++ -Wall -std=c++17 -I ../include -I ../lib -o user_game_system.exe ../src/User.cpp ../src/UserGameAssociation.cpp ../src/UserMapper.cpp ../src/Game.cpp ../src/GameMapper.cpp ../src/Database.cpp ../src/SystemManager.cpp ../src/main.cpp -L../lib -lsqlite3
