@@ -30,17 +30,21 @@ void SystemManager::showMenu() {
     }
 
 void SystemManager::addUser() {
-        std::string name, email;
-        std::cout << "Enter name: ";
-        std::getline(std::cin, name);
-        std::cout << "Enter email: ";
-        std::getline(std::cin, email);
+    std::string name, email;
+    std::cout << "Enter name: ";
+    std::getline(std::cin, name);
+    std::cout << "Enter email: ";
+    std::getline(std::cin, email);
 
-        User user(0, name, email); // Crear un nuevo usuario con ID 0, que será asignado automáticamente en la base de datos
+    User user(0, name, email); // Crear un nuevo usuario con ID 0, que será asignado automáticamente en la base de datos
+    try {
         if (userMapper.insert(user)) {
             std::cout << "User added successfully." << std::endl;
         }
+    } catch (const std::exception& e) {
+        std::cout << "Error: Email already exists in the database." << std::endl;
     }
+}
 
 void SystemManager::removeUser() {
         int id;

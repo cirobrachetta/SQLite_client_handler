@@ -30,7 +30,7 @@ void DatabaseInitializer::initialize(Database& db) {
         CREATE TABLE IF NOT EXISTS Users (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             name TEXT NOT NULL,
-            email TEXT NOT NULL
+            email TEXT NOT NULL UNIQUE
         );
     )";
 
